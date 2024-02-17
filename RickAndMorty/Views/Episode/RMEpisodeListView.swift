@@ -1,26 +1,26 @@
 //
-//  RMCharacterListView.swift
+//  RMEpisodeListView.swift
 //  RickAndMorty
 //
-//  Created by Szekely Janos on 07/12/2023.
+//  Created by Szekely Janos on 13/02/2024.
 //
 
 import UIKit
 
-protocol RMCharacterListViewDelegate: AnyObject {
+protocol RMEpisodeListViewDelegate: AnyObject {
     
-    func rmCharacterListView(
-        _ characterListView: RMCharacterListView,
-        didSelectCharacter character: RMCharacter
+    func rmEpisodeListView(
+        _ characterListView: RMEpisodeListView,
+        didSelectEpisode episode: RMEpisode
     )
     
 }
 
-/// View that handels showing list of characters, loader, etc.
-final class RMCharacterListView: UIView {
+/// View that handels showing list of episodes, loader, etc.
+final class RMEpisodeListView: UIView {
 
-    public weak var delegate: RMCharacterListViewDelegate?
-    private let viewModel = RMCharacterListViewViewModel()
+    public weak var delegate: RMEpisodeListViewDelegate?
+    private let viewModel = RMEpisodeListViewViewModel()
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -37,8 +37,8 @@ final class RMCharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(RMCharacterCollectionViewCell.self,
-                                forCellWithReuseIdentifier: RMCharacterCollectionViewCell.identifier)
+        collectionView.register(RMCharacterEpisodeCollectionViewCell.self,
+                                forCellWithReuseIdentifier: RMCharacterEpisodeCollectionViewCell.identifier)
         
         collectionView.register(RMFooterLoadingCollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
@@ -56,7 +56,7 @@ final class RMCharacterListView: UIView {
         
         spinner.startAnimating()
         viewModel.delegate = self
-        viewModel.fetchCharacters()
+        viewModel.fetchEpisodes()
         setUpCollectionView()
     }
 
@@ -84,9 +84,9 @@ final class RMCharacterListView: UIView {
     }
 }
 
-extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
+extension RMEpisodeListView: RMEpisodeListViewViewModelDelegate {    
     
-    func didLoadInitialCharacters() {
+    func didLoadInitialEpisodes() {
         collectionView.reloadData()
         spinner.stopAnimating()
         collectionView.isHidden = false
@@ -96,12 +96,12 @@ extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
         }
     }
     
-    func didSelectCharacter(_ character: RMCharacter) {
-        delegate?.rmCharacterListView(self,
-                                      didSelectCharacter: character)
+    func didSelectEpisode(_ episode: RMEpisode) {
+        delegate?.rmEpisodeListView(self,
+                                    didSelectEpisode: episode)
     }
     
-    func didLoadMoreCharacters(with newIndexPaths: [IndexPath]) {
+    func didLoadMoreEpisodes(with newIndexPaths: [IndexPath]) {
         collectionView.performBatchUpdates {
             self.collectionView.insertItems(at: newIndexPaths)
         }
