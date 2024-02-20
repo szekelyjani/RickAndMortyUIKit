@@ -1,22 +1,22 @@
 //
-//  RMEpisodeDetailViewModel.swift
+//  RMLocationDetailViewViewModel.swift
 //  RickAndMorty
 //
-//  Created by Szekely Janos on 13/02/2024.
+//  Created by Szekely Janos on 19/02/2024.
 //
 
-import UIKit
+import Foundation
 
-protocol RMEpisodeDetailViewModelDelegate: AnyObject {
-    func didFetchEpisodeDetails()
+protocol RMLocationDetailViewModelDelegate: AnyObject {
+    func didFetchLocationDetails()
 }
 
-final class RMEpisodeDetailViewModel {
+final class RMLocationDetailViewModel {
     private let endpointUrl: URL?
-    private var dataTuple: (episode: RMEpisode, characters: [RMCharacter])? {
+    private var dataTuple: (location: RMLocation, characters: [RMCharacter])? {
         didSet {
             createCellViewModels()
-            delegate?.didFetchEpisodeDetails()
+            delegate?.didFetchLocationDetails()
         }
     }
     
@@ -25,7 +25,7 @@ final class RMEpisodeDetailViewModel {
         case characters(viewmodels: [RMCharacterCollectionViewCellViewModel])
     }
     
-    public weak var delegate: RMEpisodeDetailViewModelDelegate?
+    public weak var delegate: RMLocationDetailViewModelDelegate?
     
     public private(set) var cellViewModels: [SectionType] = []
     
@@ -38,15 +38,15 @@ final class RMEpisodeDetailViewModel {
         return dataTuple.characters[index]
     }
     
-    /// Fetch backing episode model
-    public func fetchEpisodeData() {
+    /// Fetch backing location model
+    public func fetchLocationData() {
         guard let url = endpointUrl,
               let request = RMRequest(url: url) else { return }
         
-        RMService.shared.execute(request, expecting: RMEpisode.self) { [weak self] result in
+        RMService.shared.execute(request, expecting: RMLocation.self) { [weak self] result in
             switch result {
             case .success(let model):
-                self?.fetchRelatedCharacters(episode: model)
+                self?.fetchRelatedCharacters(location: model)
             case .failure:
                 break
             }
@@ -55,17 +55,17 @@ final class RMEpisodeDetailViewModel {
     
     private func createCellViewModels() {
         guard let dataTuple else { return }
-        let episode = dataTuple.episode
+        let location = dataTuple.location
         let characters = dataTuple.characters
-        var createdString = ""
-        if let date = RMCharacterInfoCollectionViewCellViewModel.dateFormatter.date(from: episode.created) {
+        var createdString = location.created
+        if let date = RMCharacterInfoCollectionViewCellViewModel.dateFormatter.date(from: location.created) {
             createdString = RMCharacterInfoCollectionViewCellViewModel.shortDateFormatter.string(from: date)
         }
         cellViewModels = [
             .information(viewmodels: [
-                .init(title: "Episode Name", value: episode.name),
-                .init(title: "Air date", value: episode.air_date),
-                .init(title: "Episode", value: episode.episode),
+                .init(title: "location Name", value: location.name),
+                .init(title: "Type", value: location.type),
+                .init(title: "Dimension", value: location.dimension),
                 .init(title: "Created", value: createdString)
             ]),
             .characters(viewmodels: characters.compactMap({
@@ -76,8 +76,8 @@ final class RMEpisodeDetailViewModel {
         ]
     }
     
-    private func fetchRelatedCharacters(episode: RMEpisode) {
-        let requests = episode.characters.compactMap({
+    private func fetchRelatedCharacters(location: RMLocation) {
+        let requests = location.residents.compactMap({
             return URL(string: $0)
         }).compactMap({
             return RMRequest(url: $0)
@@ -104,7 +104,7 @@ final class RMEpisodeDetailViewModel {
         }
         group.notify(queue: .main) {
             self.dataTuple = (
-                episode: episode,
+                location: location,
                 characters: characters
             )
         }

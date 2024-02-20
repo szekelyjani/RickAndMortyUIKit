@@ -1,20 +1,20 @@
 //
-//  RMEpisodeDetailView.swift
+//  RMLocationDetailView.swift
 //  RickAndMorty
 //
-//  Created by Szekely Janos on 13/02/2024.
+//  Created by Szekely Janos on 18/02/2024.
 //
 
 import UIKit
 
-protocol RMEpisodeDetailViewDelegate: AnyObject {
-    func rmEpisodeDetailView(_ detailView: RMEpisodeDetailView, didSelect character: RMCharacter)
+protocol RMLocationDetailViewViewDelegate: AnyObject {
+    func rmEpisodeDetailView(_ detailView: RMLocationDetailView, didSelect character: RMCharacter)
 }
 
-final class RMEpisodeDetailView: UIView {
+final class RMLocationDetailView: UIView {
     
-    public weak var delegate: RMEpisodeDetailViewDelegate?
-    private var viewModel: RMEpisodeDetailViewModel? {
+    public weak var delegate: RMLocationDetailViewViewDelegate?
+    private var viewModel: RMLocationDetailViewModel? {
         didSet {
             spinner.stopAnimating()
             self.collectionView?.reloadData()
@@ -47,7 +47,7 @@ final class RMEpisodeDetailView: UIView {
         fatalError("Unsupported")
     }
     
-    public func configure(with viewModel: RMEpisodeDetailViewModel) {
+    public func configure(with viewModel: RMLocationDetailViewModel) {
         self.viewModel = viewModel
     }
     
@@ -86,7 +86,7 @@ final class RMEpisodeDetailView: UIView {
     
 }
 
-extension RMEpisodeDetailView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RMLocationDetailView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel?.cellViewModels.count ?? 0
@@ -144,7 +144,7 @@ extension RMEpisodeDetailView: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-extension RMEpisodeDetailView {
+extension RMLocationDetailView {
     
     private func layout(for section: Int) -> NSCollectionLayoutSection {
         guard let sections = viewModel?.cellViewModels else {
@@ -192,3 +192,4 @@ extension RMEpisodeDetailView {
         return section
     }
 }
+

@@ -33,6 +33,11 @@ final class RMLocationViewViewModel {
     
     init() { }
     
+    public func location(at index: Int) -> RMLocation? {
+        guard index < locations.count, index >= 0 else { return nil }
+        return self.locations[index]
+    }
+    
     public func fetchLocations() {
         RMService.shared.execute(
             .listLocationsRequest,
@@ -45,7 +50,7 @@ final class RMLocationViewViewModel {
                 DispatchQueue.main.async {
                     self?.delegate?.didFetchInitialLocations()
                 }
-            case .failure(let error):
+            case .failure:
                 break
             }
         }
