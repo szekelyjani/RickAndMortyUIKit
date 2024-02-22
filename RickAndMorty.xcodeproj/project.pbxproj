@@ -32,6 +32,7 @@
 		AC381E0A2B823642007CF859 /* RMLocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC381E092B823642007CF859 /* RMLocationDetailView.swift */; };
 		AC381E0C2B834025007CF859 /* RMLocationDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC381E0B2B834025007CF859 /* RMLocationDetailViewViewModel.swift */; };
 		AC3AC61B2B5C19F000AFB1C4 /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3AC61A2B5C19F000AFB1C4 /* RMFooterLoadingCollectionReusableView.swift */; };
+		AC4313D22B879D4A0000C07E /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4313D12B879D4A0000C07E /* RMSearchOptionPickerViewController.swift */; };
 		AC50EB9E2B7B8B570098E29E /* RMEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50EB9D2B7B8B570098E29E /* RMEpisodeDetailViewController.swift */; };
 		AC50EBA02B7B9DDE0098E29E /* RMAPICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50EB9F2B7B9DDE0098E29E /* RMAPICacheManager.swift */; };
 		AC50EBA22B7BA4420098E29E /* RMEpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50EBA12B7BA4420098E29E /* RMEpisodeDetailViewModel.swift */; };
@@ -99,6 +100,7 @@
 		AC381E092B823642007CF859 /* RMLocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocationDetailView.swift; sourceTree = "<group>"; };
 		AC381E0B2B834025007CF859 /* RMLocationDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocationDetailViewViewModel.swift; sourceTree = "<group>"; };
 		AC3AC61A2B5C19F000AFB1C4 /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		AC4313D12B879D4A0000C07E /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		AC50EB9D2B7B8B570098E29E /* RMEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		AC50EB9F2B7B9DDE0098E29E /* RMAPICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPICacheManager.swift; sourceTree = "<group>"; };
 		AC50EBA12B7BA4420098E29E /* RMEpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailViewModel.swift; sourceTree = "<group>"; };
@@ -253,6 +255,15 @@
 				AC381E092B823642007CF859 /* RMLocationDetailView.swift */,
 			);
 			path = LocationDetails;
+			sourceTree = "<group>";
+		};
+		AC4313D32B879E280000C07E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AC381DE82B7CAF2E007CF859 /* RMSearchViewController.swift */,
+				AC4313D12B879D4A0000C07E /* RMSearchOptionPickerViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		AC8CFBB62B1BC83E00FAE50C = {
@@ -425,9 +436,9 @@
 		ACE936722B264AE8003021E2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				AC4313D32B879E280000C07E /* Search */,
 				ACE936732B264B2F003021E2 /* RMCharacterDetailViewController.swift */,
 				AC50EB9D2B7B8B570098E29E /* RMEpisodeDetailViewController.swift */,
-				AC381DE82B7CAF2E007CF859 /* RMSearchViewController.swift */,
 				AC381E062B81C439007CF859 /* RMLocationDetailViewController.swift */,
 			);
 			path = Other;
@@ -531,6 +542,7 @@
 				AC8CFBC32B1BC83E00FAE50C /* AppDelegate.swift in Sources */,
 				ACBA06BE2B84F75600DF1A2E /* RMNoSearchResultsView.swift in Sources */,
 				AC8CFBC52B1BC83E00FAE50C /* SceneDelegate.swift in Sources */,
+				AC4313D22B879D4A0000C07E /* RMSearchOptionPickerViewController.swift in Sources */,
 				AC381E072B81C439007CF859 /* RMLocationDetailViewController.swift in Sources */,
 				AC8CFBEB2B1BCE3700FAE50C /* RMSettingsViewController.swift in Sources */,
 				ACE9366D2B226299003021E2 /* Extensions.swift in Sources */,
