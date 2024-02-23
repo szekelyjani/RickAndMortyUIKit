@@ -16,9 +16,9 @@ class RMSearchView: UIView {
     
     weak var delegate: RMSearchViewDelegate?
     private let viewModel: RMSearchViewViewModel
-    
     private let searchInputView = RMSearchInputView()
     private let noResultsView = RMNoSearchResultsView()
+    
     init(frame: CGRect, viewModel: RMSearchViewViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
@@ -28,6 +28,10 @@ class RMSearchView: UIView {
         addConstraints()
         searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
         searchInputView.delegate = self
+        
+        viewModel.registerOptionChangeBlock { [weak self] tuple in
+            self?.searchInputView.update(option: tuple.0, value: tuple.1)
+        }
     }
     
     required init?(coder: NSCoder) {
