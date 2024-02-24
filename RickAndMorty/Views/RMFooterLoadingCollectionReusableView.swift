@@ -21,14 +21,14 @@ final class RMFooterLoadingCollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         addSubview(spinner)
-        addConstaint()
+        addConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
     
-    private func addConstaint() {
+    private func addConstraint() {
         NSLayoutConstraint.activate([
             spinner.widthAnchor.constraint(equalToConstant: 100),
             spinner.heightAnchor.constraint(equalToConstant: 100),

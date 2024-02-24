@@ -32,6 +32,10 @@ class RMSearchView: UIView {
         viewModel.registerOptionChangeBlock { [weak self] tuple in
             self?.searchInputView.update(option: tuple.0, value: tuple.1)
         }
+        
+        viewModel.registerSearchResultHandler { [weak self] results in
+            print(results)
+        }
     }
     
     required init?(coder: NSCoder) {
