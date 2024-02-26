@@ -109,4 +109,9 @@ extension RMSearchViewController: RMSearchViewDelegate {
         vc.sheetPresentationController?.detents = [.medium()]
         present(vc, animated: true)
     }
+    
+    func rmSearchView(_ searchView: RMSearchView, didSelectLocation location: RMLocation) {
+        let vc = RMLocationDetailViewController(location: location)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
