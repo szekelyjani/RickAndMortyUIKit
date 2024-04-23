@@ -70,7 +70,7 @@ final class RMSearchViewViewModel {
         
         let request = RMRequest(
             endpoint: config.type.endPoint,
-            queryParamters: queryParams
+            queryParameters: queryParams
         )
         
         switch config.type.endPoint {
