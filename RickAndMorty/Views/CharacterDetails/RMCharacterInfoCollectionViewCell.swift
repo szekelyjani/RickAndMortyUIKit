@@ -11,18 +11,18 @@ final class RMCharacterInfoCollectionViewCell: UICollectionViewCell {
     static let identifier = "RMCharacterInfoCollectionViewCell"
     
     private let valueLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 22, weight: .light)
+        label.font = .scaledLightSystemFont(ofSize: 22)
         return label
     }()
     
     private let titleLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .scaledMediumSystemFont(ofSize: 20)
         return label
     }()
     

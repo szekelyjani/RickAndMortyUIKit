@@ -20,10 +20,10 @@ final class RMNoSearchResultsView: UIView {
     }()
     
     private let label: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .scaledMediumSystemFont(ofSize: 20)
         return label
     }()
     

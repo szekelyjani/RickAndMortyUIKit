@@ -21,17 +21,17 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
     }()
     
     private let nameLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .scaledMediumSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let statusLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.textColor = .secondaryLabel
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = .scaledSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

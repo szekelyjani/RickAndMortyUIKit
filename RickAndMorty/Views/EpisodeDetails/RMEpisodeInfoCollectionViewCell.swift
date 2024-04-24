@@ -12,18 +12,18 @@ final class RMEpisodeInfoCollectionViewCell: UICollectionViewCell {
     static let identifier = "RMEpisodeInfoCollectionViewCell"
     
     private let titleLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .scaledMediumSystemFont(ofSize: 20)
         return label
     }()
     
     private let valueLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .scaledSystemFont(ofSize: 20)
         return label
     }()
     

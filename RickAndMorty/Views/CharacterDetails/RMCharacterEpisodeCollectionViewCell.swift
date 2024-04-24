@@ -11,23 +11,23 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     static let identifier = "RMCharacterEpisodeCollectionViewCell"
     
     private let seasonLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.font = .scaledSemiBoldSystemFont(ofSize: 20)
         return label
     }()
     
     private let nameLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 22, weight: .regular)
+        label.font = .scaledSystemFont(ofSize: 22)
         return label
     }()
     
     private let airDateLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .scaledLightSystemFont(ofSize: 18)
         return label
     }()
     

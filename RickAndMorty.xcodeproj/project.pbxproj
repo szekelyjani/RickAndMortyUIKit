@@ -75,6 +75,7 @@
 		ACE936742B264B2F003021E2 /* RMCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE936732B264B2F003021E2 /* RMCharacterDetailViewController.swift */; };
 		ACE936762B264BEA003021E2 /* RMCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE936752B264BEA003021E2 /* RMCharacterDetailView.swift */; };
 		ACE936782B264C09003021E2 /* RMCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE936772B264C09003021E2 /* RMCharacterDetailViewViewModel.swift */; };
+		F30956982BD7AAD600FD6B05 /* RMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30956972BD7AAD600FD6B05 /* RMLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		ACE936732B264B2F003021E2 /* RMCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewController.swift; sourceTree = "<group>"; };
 		ACE936752B264BEA003021E2 /* RMCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailView.swift; sourceTree = "<group>"; };
 		ACE936772B264C09003021E2 /* RMCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
+		F30956972BD7AAD600FD6B05 /* RMLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +382,7 @@
 				AC8CFBCB2B1BC83F00FAE50C /* Assets.xcassets */,
 				AC8CFBCD2B1BC83F00FAE50C /* LaunchScreen.storyboard */,
 				ACE9366C2B226299003021E2 /* Extensions.swift */,
+				F30956972BD7AAD600FD6B05 /* RMLabel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				AC381E032B8150BA007CF859 /* RMLocationTableViewCell.swift in Sources */,
 				AC381DF22B7FACD2007CF859 /* RMSettingsViewViewModel.swift in Sources */,
 				ACE9366F2B22D558003021E2 /* RMCharacterCollectionViewCell.swift in Sources */,
+				F30956982BD7AAD600FD6B05 /* RMLabel.swift in Sources */,
 				AC8CFBE92B1BCE2F00FAE50C /* RMEpisodeViewController.swift in Sources */,
 				AC2AFA172B7404760009C76F /* RMCharacterInfoCollectionViewCellViewModel.swift in Sources */,
 				AC381DF62B7FAD77007CF859 /* RMSettingsOption.swift in Sources */,
@@ -732,7 +736,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5WFHPQKLR;
+				DEVELOPMENT_TEAM = 5U5D54ZGDR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Rick & Morty";
@@ -761,7 +765,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5WFHPQKLR;
+				DEVELOPMENT_TEAM = 5U5D54ZGDR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Rick & Morty";

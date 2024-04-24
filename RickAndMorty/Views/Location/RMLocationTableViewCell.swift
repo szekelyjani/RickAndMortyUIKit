@@ -12,24 +12,24 @@ class RMLocationTableViewCell: UITableViewCell {
     static let identifier = "RMLocationTableViewCell"
     
     private let nameLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.font = .scaledMediumSystemFont(ofSize: 20)
         return label
     }()
     
     private let typeLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .scaledSystemFont(ofSize: 15)
         label.textColor = .secondaryLabel
         return label
     }()
     
     private let dimensionLabel: UILabel = {
-        let label = UILabel()
+        let label = RMLabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .scaledLightSystemFont(ofSize: 15)
         label.textColor = .secondaryLabel
         return label
     }()
